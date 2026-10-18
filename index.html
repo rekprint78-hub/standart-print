@@ -21,15 +21,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="design-system.css">
 <style>
-  .screen{height:100vh;height:100dvh;min-height:560px;display:grid;grid-template-rows:auto 1fr auto;overflow:hidden}
-  .top{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px 0}
+  .screen{height:100vh;height:100dvh;min-height:560px;display:grid;grid-template-rows:auto minmax(0,1fr) auto;overflow:hidden;min-width:0}
+  .top{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px 0;min-width:0}
   .brand{display:flex;align-items:center;gap:12px}
   .brand img{width:56px;height:56px;border-radius:50%;flex:none}
   .brand b{font-weight:800;letter-spacing:.02em;font-size:15px}
   .brand small{display:block;font-size:11px;color:var(--muted);letter-spacing:.14em;text-transform:uppercase}
-  .top-r{display:flex;align-items:center;gap:18px}
+  .top-r{display:flex;align-items:center;gap:18px;flex:none;white-space:nowrap}
   .top-r a.ph{font-weight:700;font-size:15px}
-  .main{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(24px,4vw,64px);align-items:center;min-height:0}
+  .main{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(24px,4vw,64px);align-items:center;min-height:0}
   .eyebrow{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--red);font-weight:700}
   h1{font-size:clamp(48px,7.6vw,128px);margin:14px 0 22px;line-height:.95}
   h1 em{font-style:normal;color:var(--red)}
@@ -37,7 +37,7 @@
   .chips{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 28px}
   .chip{font-size:12.5px;font-weight:600;padding:8px 14px;border-radius:999px;border:1px solid var(--line-strong);color:var(--ink)}
   .cta{display:flex;gap:12px;flex-wrap:wrap}
-  .svcs{display:grid;gap:12px}
+  .svcs{display:grid;gap:12px;min-width:0}
   .svc{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center;padding:20px 22px;border:1px solid var(--line);border-radius:20px;background:var(--panel);cursor:pointer;text-align:left;color:inherit;font:inherit;transition:border-color .2s,background .2s}
   .svc:hover{border-color:var(--red);background:var(--panel-2)}
   .svc .n{font-size:28px;font-weight:800;color:var(--red);line-height:1}
@@ -45,7 +45,7 @@
   .svc p{font-size:14px;color:var(--ink-soft);margin-top:6px}
   .svc .go{width:44px;height:44px;border-radius:50%;background:var(--red);display:grid;place-items:center;color:var(--cream)}
   .svc .go svg{width:18px;height:18px}
-  .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+  .tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:16px}
   .tile{aspect-ratio:4/3;border-radius:16px;padding:14px;display:flex;align-items:flex-end;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
   .t1{background:linear-gradient(135deg,#e3261c,#7a0d08)}
   .t2{background:linear-gradient(135deg,#dc5000,#4a1d05)}
