@@ -36,13 +36,13 @@
   .btns .btn{min-height:clamp(42px,6svh,52px);font-size:13.5px;padding:0 14px}
   .facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line-strong);border-bottom:1px solid var(--line);padding-block:clamp(10px,1.8svh,16px);gap:8px}
   .fact b{display:block;font-weight:800;font-size:clamp(14px,1.6vw,20px);line-height:1.1;text-transform:uppercase}
-  .fact span{display:block;margin-top:4px;font-size:11.5px;color:var(--muted)}
+  .fact span{display:block;margin-top:4px;font-size:12.5px;color:var(--ink-soft)}
   .fact + .fact{border-left:1px solid var(--line)}
   .fact{padding-inline:8px}
   .shot{position:relative;border-left:1px dashed var(--line-strong);background:linear-gradient(135deg,#1a0f07,#100904);display:grid;place-items:center;overflow:hidden;min-width:0}
   .shot::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 55%,rgba(227,38,28,.28),transparent 60%)}
   .shot img{position:relative;width:86%;height:auto;object-fit:contain}
-  .shot .slot{position:relative;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);border:1px dashed var(--line-strong);padding:16px 20px;border-radius:16px}
+  .shot .slot{position:relative;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);border:1px dashed var(--line-strong);padding:16px 20px;border-radius:16px}
   .svc-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;position:absolute;left:clamp(24px,4vw,64px);right:clamp(24px,4vw,64px);bottom:14px}
   .svc-strip button{all:unset;cursor:pointer;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-align:center;padding:10px 8px;border-radius:999px;border:1px solid var(--line-strong);color:var(--ink)}
   .svc-strip button:hover{background:var(--cream);color:var(--walnut)}
@@ -109,7 +109,7 @@
   </div>
 
   <div class="shot">
-    <div class="slot">Фото станка — добавим</div>
+    <img src="assets/docan-uv.webp" width="1200" height="599" alt="УФ-станок Docan — Digital Printing System" fetchpriority="high">
     <div class="svc-strip">
       <button type="button" data-open-modal data-service="Широкоформатная печать">Широкоформат</button>
       <button type="button" data-open-modal data-service="Интерьерная печать">Интерьер</button>
