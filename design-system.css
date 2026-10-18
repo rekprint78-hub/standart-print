@@ -1,0 +1,96 @@
+/* ============================================================================
+   StandART — единая дизайн-система
+   ----------------------------------------------------------------------------
+   Один файл на все сайты Игоря. Токены сняты с эталона стандарт.art
+   (палитра walnut/cream/apple/ember, шрифт Inter 400/500).
+   Тему конкретного сайта меняем ТОЛЬКО через роли (--bg, --ink, --red, ...),
+   бренд-палитру не трогаем — иначе сайты перестанут быть «об одном».
+
+   Подключение:
+     <link rel="stylesheet" href="design-system.css">
+     <link rel="stylesheet" href="theme-<сайт>.css">   // опционально
+   ========================================================================= */
+
+:root{
+  /* --- бренд-палитра (не менять) --- */
+  --walnut:#100904;   /* основной тёмный фон */
+  --cream:#ffedd7;    /* основной текст */
+  --apple:#e3261c;    /* красный акцент: CTA, маркеры, активные состояния */
+  --ember:#dc5000;    /* оранжевый акцент: второй план, подчёркивания */
+  --bark:#382416;
+  --cork:#40372e;
+  --drift:#6c5f51;
+
+  /* --- роли темы (меняются под каждый сайт) --- */
+  --bg:var(--walnut);
+  --panel:#1a0f07;
+  --panel-2:#241408;
+  --line:rgba(255,237,215,.12);
+  --line-strong:rgba(255,237,215,.28);
+  --ink:var(--cream);
+  --ink-soft:#d8c7b0;
+  --muted:#9a8b76;
+  --red:var(--apple);
+  --red-soft:#ff5a3c;
+
+  /* --- метрики --- */
+  --radius:16px;
+  --radius-pill:999px;
+  --pad:clamp(16px,3.6vw,56px);
+  --maxw:1400px;
+
+  color-scheme:dark;
+  --font:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;
+}
+
+/* --- база --- */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:rgba(227,38,28,.24);touch-action:manipulation}
+body{
+  margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);
+  font-size:15px;line-height:1.5;font-weight:400;overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit}
+h1,h2,h3{margin:0;line-height:1.02;font-weight:800;letter-spacing:-.025em;text-transform:uppercase;text-wrap:balance}
+p{margin:0;text-wrap:pretty}
+:focus-visible{outline:2px solid var(--cream);outline-offset:3px;border-radius:6px}
+
+/* --- контейнер --- */
+.wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding-inline:var(--pad)}
+
+/* --- кнопки --- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  min-height:50px;padding:0 26px;border-radius:var(--radius-pill);
+  border:1px solid transparent;font-weight:700;font-size:14.5px;
+  cursor:pointer;background:var(--red);color:var(--cream);
+  transition:transform .18s ease,background .2s ease,color .2s ease,border-color .2s ease;
+}
+.btn:hover{background:var(--red-soft);transform:translateY(-1px)}
+.btn--ghost{background:transparent;border-color:var(--line-strong)}
+.btn--ghost:hover{background:var(--cream);color:var(--walnut);border-color:var(--cream)}
+.btn--sm{min-height:44px;padding:0 20px;font-size:13.5px}
+.btn--block{width:100%}
+
+/* --- иллюстративный фон (общий приём для всех сайтов) --- */
+.brand-glow{position:relative}
+.brand-glow::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(1100px 620px at 88% -12%, rgba(227,38,28,.22), transparent 62%),
+    radial-gradient(700px 420px at -6% 108%, rgba(220,80,0,.12), transparent 65%);
+}
+.brand-dots::after{
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(rgba(255,237,215,.13) 1px, transparent 1px);
+  background-size:22px 22px;
+  mask-image:linear-gradient(180deg, transparent 0%, #000 30%, #000 70%, transparent 100%);
+  -webkit-mask-image:linear-gradient(180deg, transparent 0%, #000 30%, #000 70%, transparent 100%);
+}
+
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important}
+  html{scroll-behavior:auto}
+}
