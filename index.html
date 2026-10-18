@@ -212,6 +212,25 @@
     .svc-go{grid-column:2;justify-self:start;margin-top:4px}
     .m-row{grid-template-columns:1fr}
   }
+  /* короткие окна / ноутбуки: сжимаем, чтобы всё влезло без прокрутки */
+  @media (max-height:740px) and (min-width:981px){
+    main{padding-block:6px}
+    .grid{gap:clamp(16px,2.6vw,40px)}
+    .eyebrow{margin-bottom:8px}
+    h1{font-size:clamp(24px,min(7.0vh,5.2vw),56px)}
+    .lead{margin-top:9px;font-size:12.5px;line-height:1.4}
+    .facts{margin-top:9px;gap:6px 8px}
+    .fact{font-size:10.5px;padding:5px 10px}
+    .cta{margin-top:11px}
+    .btn{min-height:42px;font-size:13px;padding:0 22px}
+    .svc{padding:9px 15px}
+    .svc h3{font-size:13.5px}
+    .svc li{font-size:10.5px}
+    .svc-go{font-size:11.5px;padding:7px 12px}
+    .hdr{padding-block:7px}
+    .bar{padding-block:5px}
+    .bar-hint{display:none}
+  }
   @media (max-height:600px) and (min-width:981px){
     .screen{height:auto;overflow:visible}
   }
